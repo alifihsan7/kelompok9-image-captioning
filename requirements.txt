@@ -1,0 +1,2 @@
+# Isi dependency dan versi yang sudah diperiksa saat implementasi dimulai.
+# File ini belum digunakan untuk menyatakan lingkungan training siap dijalankan.

@@ -1,0 +1,24 @@
+# Dataset dan artefak besar disimpan di Google Drive.
+/data/
+/features/
+/checkpoints/
+/results/
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.zip
+*.tar
+*.tar.gz
+
+# Cache dan lingkungan lokal.
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db

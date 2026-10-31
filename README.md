@@ -6,9 +6,7 @@ Contoh target keluaran: `a dog is running on the grass`.
 
 ## Status proyek
 
-Proyek berada pada tahap persiapan. Arsitektur di bawah merupakan rancangan awal berdasarkan workflow kelompok. Kode, petunjuk menjalankan, dependency, dan hasil evaluasi akan diperbarui setelah implementasi diperiksa.
-
-**Penggunaan encoder pretrained masih perlu dikonfirmasi kepada dosen** agar sesuai dengan ketentuan *from scratch*.
+Proyek berada pada tahap persiapan. Kontrak Teknis Data V1 sudah disepakati kelompok dan struktur awal repository sudah tersedia. Implementasi model, notebook, dependency yang diperiksa, petunjuk menjalankan, serta hasil evaluasi akan ditambahkan selama pengerjaan modul.
 
 ## Rancangan model
 
@@ -46,25 +44,43 @@ Encoder menggunakan bobot pretrained. Karena itu, pendekatan ini tidak dinyataka
 
 Setiap anggota menyebut nama, peran, dan target saat memulai sesi LLM. Keputusan antarmodul dicatat bersama agar implementasi konsisten.
 
-## Struktur repository yang direncanakan
+## Struktur repository
 
 ```text
 kelompok9-image-captioning/
 ├── README.md
-├── requirements.txt
+├── requirements.txt  # diisi saat dependency diperiksa
 ├── .gitignore
-├── src/          # dataset.py, model.py, train_utils.py
-├── notebooks/    # 01_data, 02_model, 03_train, 04_demo
-├── docs/         # kontrak arsitektur dan dokumentasi teknis
-└── logs/         # dokumentasi interaksi LLM
+├── src/
+│   └── __init__.py
+├── notebooks/
+│   └── .gitkeep
+├── docs/
+│   └── .gitkeep
+└── logs/
+    └── .gitkeep
 ```
 
-Struktur ini merupakan target penataan; file dibuat ketika mulai dikerjakan. Dataset, fitur, dan checkpoint besar disimpan di Drive dalam folder `Kelompok9/`, dengan subfolder `data/`, `features/`, `src/`, `notebooks/`, `checkpoints/`, `results/`, dan `logs/`.
+File `.gitkeep` mempertahankan folder yang belum berisi berkas kerja di GitHub. Tambahkan implementasi secara bertahap sesuai pembagian berikut:
+
+| Lokasi | Berkas yang akan dibuat | Penanggung jawab |
+|---|---|---|
+| `src/` | `dataset.py` | Anggota 2 |
+| `src/` | `model.py` | Anggota 1 |
+| `src/` | `train_utils.py` | Anggota 3 |
+| `notebooks/` | `01_data.ipynb` | Anggota 2 |
+| `notebooks/` | `02_model.ipynb` | Anggota 1 |
+| `notebooks/` | `03_train.ipynb` | Anggota 3 |
+| `notebooks/` | `04_demo.ipynb` | Anggota 4 |
+| `docs/` | Kontrak teknis dan dokumentasi arsitektur | Anggota 1, dikompilasi bersama anggota 4 |
+| `logs/` | Log per modul, prompt, keputusan, dan debugging | Semua anggota, dikompilasi anggota 4 |
+
+Dataset, fitur, dan checkpoint besar disimpan di Drive dalam folder `Kelompok9/`, sesuai workflow: `data/`, `features/`, `src/`, `checkpoints/`, `results/`, dan `logs/`. Lokasi notebook kerja Colab disepakati bersama; versi yang diperiksa disimpan ke folder `notebooks/` di GitHub.
 
 ## Alur pengerjaan
 
 1. Siapkan akses GitHub, folder Drive, dan notebook Gemini bersama.
-2. Sepakati arsitektur, kontrak data, serta status izin pretrained.
+2. Gunakan arsitektur dan Kontrak Teknis Data V1 yang telah disepakati kelompok.
 3. Kerjakan pipeline data, decoder, training loop, dan dokumentasi sesuai pembagian tugas.
 4. Periksa modul dengan data dummy, kemudian integrasikan menggunakan satu batch nyata.
 5. Latih baseline, lakukan eksperimen terkontrol, dan pilih konfigurasi berdasarkan validation.
