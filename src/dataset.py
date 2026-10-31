@@ -1,10 +1,14 @@
+import os
 import json
 import pickle
 from pathlib import Path
 import torch
 from torch.utils.data import Dataset, DataLoader
 
-DEFAULT_FEATURES_DIR = Path('/content/drive/My Drive/Kelompok9/features')
+DEFAULT_FEATURES_DIR = Path('/content/drive/MyDrive/Kelompok9/features')
+
+if not os.path.exists(DEFAULT_FEATURES_DIR):
+        DEFAULT_FEATURES_DIR = Path('/content/drive/My Drive/Kelompok9/features')
 
 MAX_CONTENT_LEN = 28
 MAX_SEQ_LEN = 30
